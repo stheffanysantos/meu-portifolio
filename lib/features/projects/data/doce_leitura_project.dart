@@ -11,7 +11,7 @@ const doceLeituraProject = Project(
   short:
       'Blog do clube do livro Doce Leitura, com resenhas, livro do mês, estante e encontros, em Vue 3 e TypeScript.',
   long:
-      'Blog do Doce Leitura, clube do livro feito por garotas em Aracaju-SE. Reúne resenhas, o livro do mês, a estante, os encontros e depoimentos das leitoras. Os textos vivem em arquivos JSON validados no build, sem backend.',
+      'Blog do Doce Leitura, clube do livro feito por garotas em Aracaju-SE. Reúne resenhas, o livro do mês, a estante, os encontros e depoimentos das leitoras. Os textos vivem em arquivos JSON validados no build, sem backend. Por enquanto não vimos a necessidade de um backend.',
   url: 'https://doceleitura.vercel.app/',
   repoUrl: 'https://github.com/stheffanysantos/doce-leitura-site',
   images: [
@@ -51,16 +51,7 @@ const doceLeituraProject = Project(
         'TypeScript',
         'Vite 8',
         'vue-tsc',
-        'npm-run-all2',
         'Vercel',
-      ],
-    ),
-    ProjectSection(
-      title: 'Qualidade no build',
-      bullets: [
-        'Script validar-conteudo.ts roda antes do build (prebuild) e barra conteúdo inválido.',
-        'Checagem de tipos com vue-tsc executada em paralelo ao build.',
-        'Deploy contínuo na Vercel.',
       ],
     ),
   ],

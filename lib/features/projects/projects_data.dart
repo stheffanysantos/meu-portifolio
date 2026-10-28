@@ -13,8 +13,8 @@ const projects = <Project>[
   doceLeituraProject,
   teofinanceProject,
   helenaAppArticle,
-  presencaFemininaArticle,
-  parceirosWitArticle,
   foodLensArticle,
   ecoAlertaArticle,
+  presencaFemininaArticle,
+  parceirosWitArticle,
 ];

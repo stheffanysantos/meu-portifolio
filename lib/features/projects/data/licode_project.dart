@@ -37,10 +37,8 @@ const licodeProject = Project(
     ProjectSection(
       title: 'Arquitetura',
       text:
-          'Organização em camadas inspirada em Feature-Sliced Design, com regra de importação em um só sentido: shared, entities e depois pages e layout.',
+          'Organização em camadas inspirada em Feature-Sliced Design.',
       bullets: [
-        'shared não importa nada do projeto, entities importa só de shared, e pages e layout importam de ambas.',
-        'Nunca se importa de uma camada superior, e sempre se usa o alias @/ em vez de caminhos relativos.',
         'Fluxo padrão para cada feature: tipo, service, hook, card, página e rota.',
         'Services concentram o acesso ao Firestore (CRUD com serverTimestamp).',
         'Hooks de dados seguem um contrato único: dados, carregando, erro e recarregar.',
@@ -62,7 +60,6 @@ const licodeProject = Project(
         'Zod',
         'Firebase Auth',
         'Firestore',
-        'Firebase Storage',
         'Sonner',
         'react-helmet-async',
         'Vercel',
@@ -71,7 +68,7 @@ const licodeProject = Project(
     ProjectSection(
       title: 'Segurança e validação',
       bullets: [
-        'Regras de segurança do Firestore e do Storage versionadas no repositório.',
+        'Regras de segurança do Firestore versionadas no repositório.',
         'Schemas Zod para login, cadastro, recuperação de senha e participação, integrados ao React Hook Form.',
         'Autenticação com e-mail e Google, com recuperação de senha.',
       ],
@@ -84,8 +81,6 @@ const licodeProject = Project(
         'Performance de 97 a 98, e acessibilidade, boas práticas e SEO em 100 nas 7 páginas públicas auditadas.',
         'LCP simulado de cerca de 2,0 a 2,1 s, dentro da meta de 2,5 s.',
         'Code splitting com React.lazy e Suspense, com chunks manuais para firebase, react, ui e ícones.',
-        'Firebase Auth carregado de forma adiada para não bloquear o primeiro paint.',
-        'Shell HTML estático fora do #root para pintura precoce e menos CLS.',
         'Fontes self-hosted, CSS não bloqueante, imagens com lazy loading e logo reduzida de cerca de 1,2 MB para 11 KB.',
         'SEO técnico: lang pt-BR, meta description, canonical, robots.txt e sitemap.xml.',
       ],

@@ -30,7 +30,7 @@ const teofinanceProject = Project(
         'Parcelamentos e divisão de transações.',
         'Importação de extratos OFX com deduplicação e conciliação com as transações.',
         'Score financeiro e relatório mensal.',
-        'Assistente com IA local, e área Meus dados para a LGPD.',
+        'Assistente com IA local.',
       ],
     ),
     ProjectSection(
@@ -43,7 +43,6 @@ const teofinanceProject = Project(
         'Riverpod para injeção de dependência e estado, com testes de notifiers e estados.',
         'Tratamento funcional de erros com fpdart e camada própria de errors.',
         'Offline-first: o banco local é a fonte de verdade, e a nuvem é sincronizada por um sync engine dedicado, com pausa e status de sincronização.',
-        'Schema do banco na versão 10, o que mostra a evolução com migrações.',
       ],
     ),
     ProjectSection(
@@ -79,9 +78,9 @@ const teofinanceProject = Project(
       bullets: [
         'Regras do Firestore isoladas por usuário: users/{uid}, com subcoleções de transações, perfis, rendas, metas, orçamentos, contas e parcelamentos.',
         'Acesso negado por padrão para qualquer outro caminho.',
-        'Regras testadas contra o emulador com @firebase/rules-unit-testing (9 casos).',
+        'Regras testadas contra o emulador com @firebase/rules-unit-testing.',
         'Credenciais em armazenamento seguro e biometria com local_auth.',
-        'Feature de LGPD com repositório, casos de uso e tela de dados do usuário.',
+        'LGPD: o usuário pode exportar os próprios dados e apagar a conta, no aparelho e na nuvem.',
       ],
     ),
     ProjectSection(
