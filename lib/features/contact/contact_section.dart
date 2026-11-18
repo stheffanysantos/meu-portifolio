@@ -31,7 +31,7 @@ class ContactSection extends StatelessWidget {
                 Reveal(
                   index: i,
                   child: PillButton(
-                    label: '${c.label} ↗',
+                    label: '${c.label}',
                     onTap: () => openLink(context, c.url),
                     background: c.background,
                     foreground: c.foreground,

@@ -14,6 +14,7 @@ const teofinanceProject = Project(
       'Aplicativo de gestão financeira offline-first, com assistente de IA que roda no próprio aparelho usando o Gemma.',
   long:
       'Aplicativo de gestão financeira pessoal que funciona primeiro no dispositivo e sincroniza com a nuvem. Reúne contas a pagar, orçamento, metas, parcelamentos e importação de extratos. Integrei o Gemma, modelo de IA do Google, para um assistente que responde sobre as finanças com inferência local, sem enviar os dados para fora do aparelho.',
+  url: 'https://teofinance.tets.app.br/',
   repoUrl: 'https://github.com/stheffanysantos/teofinance',
   metrics: [
     ProjectMetric('454', 'casos de teste'),
