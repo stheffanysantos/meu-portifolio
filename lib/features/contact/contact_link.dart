@@ -50,12 +50,11 @@ const contactLinks = <ContactLink>[
     background: AppColors.purple,
     foreground: Colors.white,
   ),
-  // Quando existir o PDF em inglês, coloque em web/curriculo-en.pdf, preencha
-  // urlEn: 'curriculo-en.pdf' e troque o rótulo para 'Resume (PDF)'.
   ContactLink(
     label: 'Currículo em PDF',
-    labelEn: 'Resume (PDF, in Portuguese)',
+    labelEn: 'Resume (PDF)',
     url: 'curriculo.pdf',
+    urlEn: 'curriculo-en.pdf',
     background: AppColors.pale,
     foreground: AppColors.navy,
   ),
