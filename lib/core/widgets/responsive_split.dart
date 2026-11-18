@@ -6,11 +6,13 @@ class ResponsiveSplit extends StatelessWidget {
     required this.first,
     required this.second,
     this.gap = 32,
+    this.crossAxisAlignment = CrossAxisAlignment.center,
   });
 
   final Widget first;
   final Widget second;
   final double gap;
+  final CrossAxisAlignment crossAxisAlignment;
 
   static const breakpoint = 600.0;
 
@@ -29,7 +31,7 @@ class ResponsiveSplit extends StatelessWidget {
           );
         }
         return Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
+          crossAxisAlignment: crossAxisAlignment,
           children: [
             Expanded(child: first),
             SizedBox(width: gap),

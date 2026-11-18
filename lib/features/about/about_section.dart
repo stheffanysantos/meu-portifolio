@@ -62,159 +62,126 @@ class AboutSection extends StatelessWidget {
       decoration: const BoxDecoration(
         border: Border(top: BorderSide(color: AppColors.divider, width: 2)),
       ),
-      child: ResponsiveSplit(
-        first: const Align(
-          alignment: Alignment.topLeft,
-          child: Reveal(child: SectionTitle('Sobre mim')),
-        ),
-        second: _ScrollOnWide(
-          child: Column(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Reveal(child: SectionTitle('Sobre mim')),
+          const SizedBox(height: 32),
+          ResponsiveSplit(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Reveal(
-                child: Text(
-                  'Minha trajetória combina Desenvolvimento Mobile, Web e UX Design, permitindo construir soluções com foco em usabilidade, performance e escalabilidade.',
-                  style: paragraph,
+            first: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Reveal(
+                  child: Text(
+                    'Minha trajetória combina Desenvolvimento Mobile, Web e UX Design, permitindo construir soluções com foco em usabilidade, performance e escalabilidade.',
+                    style: paragraph,
+                  ),
                 ),
-              ),
-              const SizedBox(height: 16),
-              Reveal(
-                child: Text(
-                  'Atualmente, atuo no desenvolvimento de sistemas e produtos digitais utilizando Flutter, React e Java/JSP. Também desenvolvo pesquisa acadêmica em Ciência da Computação e atuo como Presidente do Licode (Ladies in Code), liderando iniciativas de comunidade, eventos e mentoria.',
-                  style: paragraph,
+                const SizedBox(height: 16),
+                Reveal(
+                  child: Text(
+                    'Atualmente, atuo no desenvolvimento de sistemas e produtos digitais utilizando Flutter, React e Java/JSP. Também desenvolvo pesquisa acadêmica em Ciência da Computação e atuo como Presidente do Licode (Ladies in Code), liderando iniciativas de comunidade, eventos e mentoria.',
+                    style: paragraph,
+                  ),
                 ),
-              ),
-              const SizedBox(height: 24),
-              Wrap(
-                spacing: 8,
-                runSpacing: 8,
-                children: [
-                  for (final (i, interest) in _interests.indexed)
-                    Reveal(
-                      index: i,
-                      child: Container(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 14,
-                          vertical: 8,
-                        ),
-                        decoration: BoxDecoration(
-                          border: Border.all(color: AppColors.border, width: 2),
-                          borderRadius: BorderRadius.circular(999),
-                        ),
-                        child: Text(
-                          interest,
-                          style: GoogleFonts.poppins(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w600,
+                const SizedBox(height: 24),
+                Wrap(
+                  spacing: 8,
+                  runSpacing: 8,
+                  children: [
+                    for (final (i, interest) in _interests.indexed)
+                      Reveal(
+                        index: i,
+                        child: Container(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 14,
+                            vertical: 8,
+                          ),
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: AppColors.border,
+                              width: 2,
+                            ),
+                            borderRadius: BorderRadius.circular(999),
+                          ),
+                          child: Text(
+                            interest,
+                            style: GoogleFonts.poppins(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w600,
+                            ),
                           ),
                         ),
                       ),
+                  ],
+                ),
+              ],
+            ),
+            second: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Reveal(
+                  child: Text(
+                    'Tecnologias',
+                    style: GoogleFonts.poppins(
+                      fontSize: 22,
+                      fontWeight: FontWeight.w800,
                     ),
-                ],
-              ),
-              const SizedBox(height: 40),
-              Reveal(
-                child: Text(
-                  'Tecnologias',
-                  style: GoogleFonts.poppins(
-                    fontSize: 22,
-                    fontWeight: FontWeight.w800,
                   ),
                 ),
-              ),
-              const SizedBox(height: 16),
-              for (final (i, (group, techs)) in _techGroups.indexed)
-                Reveal(
-                  index: i,
-                  child: Padding(
-                    padding: const EdgeInsets.only(bottom: 16),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          group,
-                          style: GoogleFonts.poppins(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w700,
-                            color: AppColors.purple,
+                const SizedBox(height: 16),
+                for (final (i, (group, techs)) in _techGroups.indexed)
+                  Reveal(
+                    index: i,
+                    child: Padding(
+                      padding: const EdgeInsets.only(bottom: 16),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            group,
+                            style: GoogleFonts.poppins(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w700,
+                              color: AppColors.purple,
+                            ),
                           ),
-                        ),
-                        const SizedBox(height: 8),
-                        Wrap(
-                          spacing: 8,
-                          runSpacing: 8,
-                          children: [
-                            for (final tech in techs)
-                              Container(
-                                padding: const EdgeInsets.symmetric(
-                                  horizontal: 12,
-                                  vertical: 6,
-                                ),
-                                decoration: BoxDecoration(
-                                  color: AppColors.pale,
-                                  borderRadius: BorderRadius.circular(999),
-                                ),
-                                child: Text(
-                                  tech,
-                                  style: GoogleFonts.poppins(
-                                    fontSize: 13,
-                                    fontWeight: FontWeight.w600,
-                                    color: AppColors.navy,
+                          const SizedBox(height: 8),
+                          Wrap(
+                            spacing: 8,
+                            runSpacing: 8,
+                            children: [
+                              for (final tech in techs)
+                                Container(
+                                  padding: const EdgeInsets.symmetric(
+                                    horizontal: 12,
+                                    vertical: 6,
+                                  ),
+                                  decoration: BoxDecoration(
+                                    color: AppColors.pale,
+                                    borderRadius: BorderRadius.circular(999),
+                                  ),
+                                  child: Text(
+                                    tech,
+                                    style: GoogleFonts.poppins(
+                                      fontSize: 13,
+                                      fontWeight: FontWeight.w600,
+                                      color: AppColors.navy,
+                                    ),
                                   ),
                                 ),
-                              ),
-                          ],
-                        ),
-                      ],
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
                   ),
-                ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class _ScrollOnWide extends StatefulWidget {
-  const _ScrollOnWide({required this.child});
-
-  final Widget child;
-
-  @override
-  State<_ScrollOnWide> createState() => _ScrollOnWideState();
-}
-
-class _ScrollOnWideState extends State<_ScrollOnWide> {
-  final _controller = ScrollController();
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        if (MediaQuery.sizeOf(context).width < ResponsiveSplit.breakpoint) {
-          return widget.child;
-        }
-        return ConstrainedBox(
-          constraints: const BoxConstraints(maxHeight: 520),
-          child: Scrollbar(
-            controller: _controller,
-            thumbVisibility: true,
-            child: SingleChildScrollView(
-              controller: _controller,
-              padding: const EdgeInsets.only(right: 16),
-              child: widget.child,
+              ],
             ),
           ),
-        );
-      },
+        ],
+      ),
     );
   }
 }
