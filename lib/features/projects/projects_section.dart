@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../core/i18n/app_language.dart';
 import '../../core/theme/app_colors.dart';
 import '../../core/widgets/reveal.dart';
 import '../../core/widgets/section_title.dart';
@@ -16,12 +17,14 @@ class ProjectsSection extends StatefulWidget {
 }
 
 class _ProjectsSectionState extends State<ProjectsSection> {
-  String _filter = 'Todos';
+  int _filter = 0;
 
   @override
   Widget build(BuildContext context) {
+    final projects = projectsFor(context.lang);
+    final filters = projectFiltersFor(context.lang);
     final visible = projects
-        .where((p) => _filter == 'Todos' || p.category == _filter)
+        .where((p) => _filter == 0 || p.category == filters[_filter])
         .toList();
 
     return Padding(
@@ -38,16 +41,16 @@ class _ProjectsSectionState extends State<ProjectsSection> {
                 spacing: 16,
                 runSpacing: 16,
                 children: [
-                  const SectionTitle('Projetos'),
+                  SectionTitle(context.tr('Projetos', 'Projects')),
                   Wrap(
                     spacing: 6,
                     runSpacing: 6,
                     children: [
-                      for (final f in projectFilters)
+                      for (final (i, f) in filters.indexed)
                         _FilterChip(
                           label: f,
-                          selected: f == _filter,
-                          onTap: () => setState(() => _filter = f),
+                          selected: i == _filter,
+                          onTap: () => setState(() => _filter = i),
                         ),
                     ],
                   ),
@@ -64,7 +67,10 @@ class _ProjectsSectionState extends State<ProjectsSection> {
                 borderRadius: BorderRadius.circular(40),
               ),
               child: Text(
-                'Nada adicionado nesta categoria ainda. Adicione itens em PROJECTS com a category correspondente (UX/UI ou Artigos).',
+                context.tr(
+                  'Nada adicionado nesta categoria ainda.',
+                  'Nothing added in this category yet.',
+                ),
                 style: GoogleFonts.poppins(
                   fontSize: 17,
                   color: AppColors.muted,

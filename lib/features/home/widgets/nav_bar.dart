@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../../core/i18n/app_language.dart';
 import '../../../core/theme/app_colors.dart';
+import '../../../core/widgets/language_toggle.dart';
 
 class NavBar extends StatelessWidget {
   const NavBar({
@@ -15,27 +17,58 @@ class NavBar extends StatelessWidget {
   final VoidCallback onAbout;
   final VoidCallback onContact;
 
+  static const _narrow = 560.0;
+
   @override
   Widget build(BuildContext context) {
+    final items = [
+      _NavItem(context.tr('Projetos', 'Projects'), onProjects),
+      _NavItem(context.tr('Sobre', 'About'), onAbout),
+      _NavItem(context.tr('Contato', 'Contact'), onContact),
+    ];
+
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 18),
-      child: Row(
-        children: [
-          Expanded(
-            child: Text(
-              'Stheffany Santos',
-              overflow: TextOverflow.ellipsis,
-              style: GoogleFonts.poppins(
-                fontWeight: FontWeight.w800,
-                fontSize: 17,
-              ),
-            ),
-          ),
-          _NavItem('Projetos', onProjects),
-          _NavItem('Sobre', onAbout),
-          _NavItem('Contato', onContact),
-        ],
+      child: LayoutBuilder(
+        builder: (context, constraints) {
+          if (constraints.maxWidth < _narrow) {
+            return Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Row(
+                  children: [
+                    Expanded(child: _Name()),
+                    LanguageToggle(),
+                  ],
+                ),
+                const SizedBox(height: 8),
+                Wrap(children: items),
+              ],
+            );
+          }
+          return Row(
+            children: [
+              const Expanded(child: _Name()),
+              ...items,
+              const SizedBox(width: 6),
+              const LanguageToggle(),
+            ],
+          );
+        },
       ),
+    );
+  }
+}
+
+class _Name extends StatelessWidget {
+  const _Name();
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      'Stheffany Santos',
+      overflow: TextOverflow.ellipsis,
+      style: GoogleFonts.poppins(fontWeight: FontWeight.w800, fontSize: 17),
     );
   }
 }

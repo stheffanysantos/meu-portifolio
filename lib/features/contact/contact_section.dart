@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../core/i18n/app_language.dart';
 import '../../core/theme/app_colors.dart';
 import '../../core/utils/link_opener.dart';
 import '../../core/widgets/pill_button.dart';
@@ -21,7 +22,7 @@ class ContactSection extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Reveal(child: SectionTitle('Contato')),
+          Reveal(child: SectionTitle(context.tr('Contato', 'Contact'))),
           const SizedBox(height: 24),
           Wrap(
             spacing: 12,
@@ -31,8 +32,8 @@ class ContactSection extends StatelessWidget {
                 Reveal(
                   index: i,
                   child: PillButton(
-                    label: '${c.label}',
-                    onTap: () => openLink(context, c.url),
+                    label: c.labelFor(context.lang),
+                    onTap: () => openLink(context, c.urlFor(context.lang)),
                     background: c.background,
                     foreground: c.foreground,
                   ),

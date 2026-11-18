@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../core/i18n/app_language.dart';
 import '../../core/theme/app_colors.dart';
 import '../../core/utils/link_opener.dart';
 import '../../core/widgets/pill_button.dart';
@@ -21,7 +22,7 @@ Future<void> showProjectDrawer(
   return showGeneralDialog(
     context: context,
     barrierDismissible: true,
-    barrierLabel: 'Fechar',
+    barrierLabel: context.tr('Fechar', 'Close'),
     barrierColor: AppColors.navy.withValues(alpha: .5),
     transitionDuration: const Duration(milliseconds: 400),
     pageBuilder: (_, _, _) => _ProjectDrawer(project: project, number: number),
@@ -146,7 +147,9 @@ class _Footer extends StatelessWidget {
             children: [
               if (project.url.isNotEmpty)
                 PillButton(
-                  label: project.isArticle ? 'Ler artigo ↗' : 'Abrir projeto ↗',
+                  label: project.isArticle
+                      ? context.tr('Ler artigo ↗', 'Read article ↗')
+                      : context.tr('Abrir projeto ↗', 'Open project ↗'),
                   onTap: () => openLink(context, project.url),
                   background: AppColors.blue,
                   hoverBackground: AppColors.blueDark,
@@ -154,7 +157,7 @@ class _Footer extends StatelessWidget {
                 ),
               if (project.repoUrl.isNotEmpty)
                 PillButton(
-                  label: 'Repositório ↗',
+                  label: context.tr('Repositório ↗', 'Repository ↗'),
                   onTap: () => openLink(context, project.repoUrl),
                   background: AppColors.navy,
                   foreground: Colors.white,
@@ -164,7 +167,7 @@ class _Footer extends StatelessWidget {
           const SizedBox(height: 28),
           Center(
             child: Text(
-              '— Fim da edição —',
+              context.tr('— Fim da edição —', '— End of issue —'),
               style: GoogleFonts.poppins(
                 color: AppColors.muted,
                 fontSize: 13,

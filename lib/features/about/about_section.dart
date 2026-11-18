@@ -1,25 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../core/i18n/app_language.dart';
 import '../../core/theme/app_colors.dart';
 import '../../core/widgets/responsive_split.dart';
 import '../../core/widgets/reveal.dart';
 import '../../core/widgets/section_title.dart';
 
-const _interests = [
-  'Desenvolvimento Mobile',
-  'Engenharia de Software',
-  'Arquitetura de Aplicações',
-  'User Experience',
-  'Design Systems',
-  'Acessibilidade',
-  'Inteligência Artificial',
+const _interests = <(String, String)>[
+  ('Desenvolvimento Mobile', 'Mobile Development'),
+  ('Engenharia de Software', 'Software Engineering'),
+  ('Arquitetura de Aplicações', 'Application Architecture'),
+  ('User Experience', 'User Experience'),
+  ('Design Systems', 'Design Systems'),
+  ('Acessibilidade', 'Accessibility'),
+  ('Inteligência Artificial', 'Artificial Intelligence'),
 ];
 
-const _techGroups = <(String, List<String>)>[
-  ('Linguagens', ['TypeScript', 'Java', 'Dart', 'SQL']),
+const _techGroups = <(String, String, List<String>)>[
+  ('Linguagens', 'Languages', ['TypeScript', 'Java', 'Dart', 'SQL']),
   (
     'Frontend e estado',
+    'Frontend and state',
     [
       'Flutter',
       'Riverpod',
@@ -32,10 +34,15 @@ const _techGroups = <(String, List<String>)>[
       'Pinia',
     ],
   ),
-  ('Backend', ['Node.js', 'Express.js', 'Java']),
-  ('Bancos de dados', ['PostgreSQL', 'MySQL', 'Firebase', 'Supabase']),
+  ('Backend', 'Backend', ['Node.js', 'Express.js', 'Java']),
+  (
+    'Bancos de dados',
+    'Databases',
+    ['PostgreSQL', 'MySQL', 'Firebase', 'Supabase'],
+  ),
   (
     'Testes',
+    'Testing',
     [
       'Jest',
       'Vitest',
@@ -45,8 +52,8 @@ const _techGroups = <(String, List<String>)>[
       'mocktail',
     ],
   ),
-  ('Arquitetura', ['Clean Architecture', 'MVVM', 'FSD', 'MVC']),
-  ('Ferramentas', ['Git', 'GitHub', 'CI/CD', 'Figma']),
+  ('Arquitetura', 'Architecture', ['Clean Architecture', 'MVVM', 'FSD', 'MVC']),
+  ('Ferramentas', 'Tools', ['Git', 'GitHub', 'CI/CD', 'Figma']),
 ];
 
 class AboutSection extends StatelessWidget {
@@ -65,7 +72,7 @@ class AboutSection extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Reveal(child: SectionTitle('Sobre mim')),
+          Reveal(child: SectionTitle(context.tr('Sobre mim', 'About me'))),
           const SizedBox(height: 32),
           ResponsiveSplit(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -74,14 +81,20 @@ class AboutSection extends StatelessWidget {
               children: [
                 Reveal(
                   child: Text(
-                    'Minha trajetória combina Desenvolvimento Mobile, Web e UX Design, permitindo construir soluções com foco em usabilidade, performance e escalabilidade.',
+                    context.tr(
+                      'Minha trajetória combina Desenvolvimento Mobile, Web e UX Design, permitindo construir soluções com foco em usabilidade, performance e escalabilidade.',
+                      'My path combines Mobile Development, Web and UX Design, which lets me build solutions focused on usability, performance and scalability.',
+                    ),
                     style: paragraph,
                   ),
                 ),
                 const SizedBox(height: 16),
                 Reveal(
                   child: Text(
-                    'Atualmente, atuo no desenvolvimento de sistemas e produtos digitais utilizando Flutter, React e Java/JSP. Também desenvolvo pesquisa acadêmica em Ciência da Computação e atuo como Presidente do Licode (Ladies in Code), liderando iniciativas de comunidade, eventos e mentoria.',
+                    context.tr(
+                      'Atualmente, atuo no desenvolvimento de sistemas e produtos digitais utilizando Flutter, React e Java/JSP. Também desenvolvo pesquisa acadêmica em Ciência da Computação e atuo como Presidente do Licode (Ladies in Code), liderando iniciativas de comunidade, eventos e mentoria.',
+                      'Currently, I develop systems and digital products with Flutter, React and Java/JSP. I also do academic research in Computer Science and serve as President of Licode (Ladies in Code), leading community initiatives, events and mentoring.',
+                    ),
                     style: paragraph,
                   ),
                 ),
@@ -90,7 +103,8 @@ class AboutSection extends StatelessWidget {
                   spacing: 8,
                   runSpacing: 8,
                   children: [
-                    for (final (i, interest) in _interests.indexed)
+                    for (final (i, (interestPt, interestEn))
+                        in _interests.indexed)
                       Reveal(
                         index: i,
                         child: Container(
@@ -106,7 +120,7 @@ class AboutSection extends StatelessWidget {
                             borderRadius: BorderRadius.circular(999),
                           ),
                           child: Text(
-                            interest,
+                            context.tr(interestPt, interestEn),
                             style: GoogleFonts.poppins(
                               fontSize: 14,
                               fontWeight: FontWeight.w600,
@@ -123,7 +137,7 @@ class AboutSection extends StatelessWidget {
               children: [
                 Reveal(
                   child: Text(
-                    'Tecnologias',
+                    context.tr('Tecnologias', 'Technologies'),
                     style: GoogleFonts.poppins(
                       fontSize: 22,
                       fontWeight: FontWeight.w800,
@@ -131,7 +145,8 @@ class AboutSection extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 16),
-                for (final (i, (group, techs)) in _techGroups.indexed)
+                for (final (i, (groupPt, groupEn, techs))
+                    in _techGroups.indexed)
                   Reveal(
                     index: i,
                     child: Padding(
@@ -140,7 +155,7 @@ class AboutSection extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            group,
+                            context.tr(groupPt, groupEn),
                             style: GoogleFonts.poppins(
                               fontSize: 14,
                               fontWeight: FontWeight.w700,

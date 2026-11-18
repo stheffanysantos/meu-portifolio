@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../i18n/app_language.dart';
 import '../theme/app_colors.dart';
 
 Future<void> openLink(BuildContext context, String url) async {
@@ -11,7 +12,10 @@ Future<void> openLink(BuildContext context, String url) async {
     messenger.showSnackBar(
       SnackBar(
         content: Text(
-          'Link indisponível por enquanto',
+          context.tr(
+            'Link indisponível por enquanto',
+            'Link not available yet',
+          ),
           textAlign: TextAlign.center,
           style: GoogleFonts.poppins(
             fontWeight: FontWeight.w800,

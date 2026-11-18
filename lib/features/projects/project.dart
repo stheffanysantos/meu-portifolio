@@ -52,7 +52,7 @@ class Project {
   final List<ProjectMetric> metrics;
   final List<ProjectSection> sections;
 
-  bool get isArticle => category == 'Artigos';
+  bool get isArticle => category == 'Artigos' || category == 'Articles';
 
   int get readingMinutes {
     final text = StringBuffer(long);

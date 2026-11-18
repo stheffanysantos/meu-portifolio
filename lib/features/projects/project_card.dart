@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../core/i18n/app_language.dart';
 import '../../core/theme/app_colors.dart';
 import '../../core/widgets/responsive_split.dart';
 import 'project.dart';
@@ -221,7 +222,9 @@ class _Info extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 Text(
-                  project.isArticle ? 'Ler artigo' : 'Explorar projeto',
+                  project.isArticle
+                      ? context.tr('Ler artigo', 'Read article')
+                      : context.tr('Explorar projeto', 'Explore project'),
                   style: GoogleFonts.poppins(
                     color: project.ink,
                     fontWeight: FontWeight.w800,

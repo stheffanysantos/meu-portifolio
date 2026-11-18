@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../../core/i18n/app_language.dart';
 import '../../../core/theme/app_colors.dart';
 import '../project.dart';
 
@@ -30,7 +31,10 @@ class NewsletterHeader extends StatelessWidget {
             children: [
               Expanded(
                 child: Text(
-                  'EDIÇÃO $edition · ${project.category.toUpperCase()}',
+                  context.tr(
+                    'EDIÇÃO $edition · ${project.category.toUpperCase()}',
+                    'ISSUE $edition · ${project.category.toUpperCase()}',
+                  ),
                   style: GoogleFonts.poppins(
                     color: project.ink,
                     fontWeight: FontWeight.w800,
@@ -76,7 +80,10 @@ class NewsletterHeader extends StatelessWidget {
           ),
           const SizedBox(height: 20),
           Text(
-            '${project.readingMinutes} min de leitura',
+            context.tr(
+              '${project.readingMinutes} min de leitura',
+              '${project.readingMinutes} min read',
+            ),
             style: GoogleFonts.poppins(
               color: project.ink,
               fontWeight: FontWeight.w700,

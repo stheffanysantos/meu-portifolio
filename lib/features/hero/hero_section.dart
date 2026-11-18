@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../core/i18n/app_language.dart';
 import '../../core/theme/app_colors.dart';
 import '../../core/widgets/pill_button.dart';
 import '../../core/widgets/responsive_split.dart';
@@ -66,7 +67,10 @@ class HeroSection extends StatelessWidget {
             ConstrainedBox(
               constraints: const BoxConstraints(maxWidth: 380),
               child: Text(
-                'Sou Desenvolvedora de Software apaixonada por criar produtos digitais que unem tecnologia, experiência do usuário e impacto para o negócio.',
+                context.tr(
+                  'Sou Desenvolvedora de Software apaixonada por criar produtos digitais que unem tecnologia, experiência do usuário e impacto para o negócio.',
+                  "I'm a software developer who loves building digital products that combine technology, user experience and business impact.",
+                ),
                 style: GoogleFonts.poppins(
                   fontSize: 19,
                   height: 1.5,
@@ -80,14 +84,14 @@ class HeroSection extends StatelessWidget {
               runSpacing: 10,
               children: [
                 PillButton(
-                  label: 'Ver projetos',
+                  label: context.tr('Ver projetos', 'View projects'),
                   onTap: onProjects,
                   background: AppColors.blue,
                   hoverBackground: AppColors.blueDark,
                   foreground: Colors.white,
                 ),
                 PillButton(
-                  label: 'Contato',
+                  label: context.tr('Contato', 'Contact'),
                   onTap: onContact,
                   background: Colors.transparent,
                   hoverBackground: AppColors.pale,
