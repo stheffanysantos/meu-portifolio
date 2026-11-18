@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import '../../../core/theme/app_colors.dart';
 import '../project.dart';
 
-// Os títulos (`long`) ficam no idioma original da publicação.
+// Títulos em inglês: os de HelenaApp, Presença Feminina, FoodLens e EcoAlerta vêm
+// do currículo em inglês; o de Parceiros WIT é tradução própria.
 
 const helenaAppArticleEn = Project(
   name: 'HelenaApp',
@@ -15,7 +16,7 @@ const helenaAppArticleEn = Project(
   short:
       'Emotional microinteractions as an engagement strategy in well-being habit-building apps.',
   long:
-      'Microinterações Emocionais no Design de Interfaces para Formação de Hábitos de Bem-Estar: Contribuições da IHC à Transformação Digital',
+      'Emotional Microinteractions in Interface Design for Well-Being Habit Formation: HCI Contributions to Digital Transformation',
   url: 'https://doi.org/10.5753/clihc.2026.20403',
   metrics: [
     ProjectMetric('70–80%', 'abandonment rate in habit apps'),
@@ -28,7 +29,7 @@ const helenaAppArticleEn = Project(
       title: 'Publication',
       bullets: [
         'Full paper in the Proceedings of the XII Latin American Conference on Human-Computer Interaction (CLIHC 2026).',
-        'Title shown in its original language (Portuguese).',
+        'Original title (Portuguese): Microinterações Emocionais no Design de Interfaces para Formação de Hábitos de Bem-Estar: Contribuições da IHC à Transformação Digital',
         'DOI: 10.5753/clihc.2026.20403',
       ],
     ),
@@ -69,7 +70,7 @@ const presencaFemininaArticleEn = Project(
   short:
       'Exploratory analysis of the challenges and opportunities for women in IT in Northeast Brazil.',
   long:
-      'Presença Feminina em Diversas Áreas de TI no Nordeste: Uma Análise Exploratória dos Desafios e Oportunidades',
+      'Female Representation Across Different IT Fields in the Northeastern Brazilian Context',
   url: 'https://doi.org/10.5753/erbase.2025.14158',
   metrics: [
     ProjectMetric('14%', 'women in undergraduate programs'),
@@ -81,7 +82,7 @@ const presencaFemininaArticleEn = Project(
       title: 'Publication',
       bullets: [
         'Meninas Digitais Workshop, in the Proceedings of the XXV Regional School of Computing of Bahia, Alagoas and Sergipe (ERBASE 2025).',
-        'Title shown in its original language (Portuguese).',
+        'Original title (Portuguese): Presença Feminina em Diversas Áreas de TI no Nordeste: Uma Análise Exploratória dos Desafios e Oportunidades',
         'DOI: 10.5753/erbase.2025.14158',
       ],
     ),
@@ -126,7 +127,7 @@ const parceirosWitArticleEn = Project(
   short:
       'Qualitative analysis of reports from Northeast Brazil partner projects of Meninas Digitais in WIT papers.',
   long:
-      'Presença de Projetos Parceiros Nordestinos do Meninas Digitais em Artigos do WIT: Análise Qualitativa de Temáticas Trabalhadas',
+      'Presence of Northeastern Partner Projects of Meninas Digitais in WIT Papers: Qualitative Analysis of Themes Addressed',
   url: 'https://doi.org/10.5753/erbase.2025.13761',
   metrics: [
     ProjectMetric('339', 'papers evaluated'),
@@ -138,7 +139,7 @@ const parceirosWitArticleEn = Project(
       title: 'Publication',
       bullets: [
         'Proceedings of the Regional School of Computing of Bahia, Alagoas and Sergipe (ERBASE 2025).',
-        'Title shown in its original language (Portuguese).',
+        'Original title (Portuguese): Presença de Projetos Parceiros Nordestinos do Meninas Digitais em Artigos do WIT: Análise Qualitativa de Temáticas Trabalhadas',
         'DOI: 10.5753/erbase.2025.13761',
       ],
     ),
@@ -184,7 +185,7 @@ const foodLensArticleEn = Project(
   short:
       'Mobile system for real-time product recognition with YOLOv8, OCR and LLM-based data enrichment.',
   long:
-      'FoodLens AI: Um Sistema de Reconhecimento de Produtos com Visão Computacional, OCR e Enriquecimento de Dados em Tempo Real',
+      'FoodLens AI: A Product Recognition System Using Computer Vision, OCR, and Real-Time Data Enrichment',
   url: 'https://doi.org/10.5753/erbase.2026.29908',
   metrics: [
     ProjectMetric('YOLOv8', 'object detection'),
@@ -196,7 +197,7 @@ const foodLensArticleEn = Project(
       title: 'Publication',
       bullets: [
         'Research Workshop (PESQBASE), in the Proceedings of the XXVI Regional School of Computing of Bahia, Alagoas and Sergipe (ERBASE 2026).',
-        'Title shown in its original language (Portuguese).',
+        'Original title (Portuguese): FoodLens AI: Um Sistema de Reconhecimento de Produtos com Visão Computacional, OCR e Enriquecimento de Dados em Tempo Real',
         'DOI: 10.5753/erbase.2026.29908',
       ],
     ),
@@ -237,7 +238,7 @@ const ecoAlertaArticleEn = Project(
   short:
       'Report on a citizen app for waste and flooding, built by high school students in Technovation Girls 2026.',
   long:
-      'EcoAlerta: Desenvolvimento de Aplicativo Cidadão para Gestão de Resíduos e Alagamentos no Technovation Girls 2026',
+      'EcoAlerta: Development of a Citizen App for Waste and Flood Management at Technovation Girls 2026',
   url: 'https://doi.org/10.5753/erbase.2026.29858',
   metrics: [
     ProjectMetric('4', 'high school students'),
@@ -249,7 +250,7 @@ const ecoAlertaArticleEn = Project(
       title: 'Publication',
       bullets: [
         'Meninas Digitais Workshop, in the Proceedings of the XXVI Regional School of Computing of Bahia, Alagoas and Sergipe (ERBASE 2026).',
-        'Title shown in its original language (Portuguese).',
+        'Original title (Portuguese): EcoAlerta: Desenvolvimento de Aplicativo Cidadão para Gestão de Resíduos e Alagamentos no Technovation Girls 2026',
         'DOI: 10.5753/erbase.2026.29858',
       ],
     ),
