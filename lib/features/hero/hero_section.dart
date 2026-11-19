@@ -68,8 +68,8 @@ class HeroSection extends StatelessWidget {
               constraints: const BoxConstraints(maxWidth: 380),
               child: Text(
                 context.tr(
-                  'Sou Desenvolvedora de Software apaixonada por criar produtos digitais que unem tecnologia, experiência do usuário e impacto para o negócio.',
-                  "I'm a software developer who loves building digital products that combine technology, user experience and business impact.",
+                  'Sou Desenvolvedora de Software com foco em criar produtos digitais que unem tecnologia, experiência do usuário e impacto para o negócio.',
+                  "I'm a software developer focused on building digital products that combine technology, user experience and business impact.",
                 ),
                 style: GoogleFonts.poppins(
                   fontSize: 19,

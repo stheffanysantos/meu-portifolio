@@ -9,50 +9,38 @@ import '../../core/widgets/section_title.dart';
 
 const _interests = <(String, String)>[
   ('Desenvolvimento Mobile', 'Mobile Development'),
-  ('Engenharia de Software', 'Software Engineering'),
+  ('Java', 'Java'),
+  ('Offline-first', 'Offline-first'),
+  ('SLMs', 'SLMs'),
+  ('Machine Learning', 'Machine Learning'),
+  ('Visão Computacional', 'Computer Vision'),
   ('Arquitetura de Aplicações', 'Application Architecture'),
-  ('User Experience', 'User Experience'),
-  ('Design Systems', 'Design Systems'),
-  ('Acessibilidade', 'Accessibility'),
-  ('Inteligência Artificial', 'Artificial Intelligence'),
+  ('Testes automatizados', 'Automated Testing'),
 ];
 
 const _techGroups = <(String, String, List<String>)>[
-  ('Linguagens', 'Languages', ['TypeScript', 'Java', 'Dart', 'SQL']),
   (
-    'Frontend e estado',
-    'Frontend and state',
-    [
-      'Flutter',
-      'Riverpod',
-      'Provider',
-      'GetX',
-      'React',
-      'Context API',
-      'Zustand',
-      'Vue.js',
-      'Pinia',
-    ],
+    'Mobile',
+    'Mobile',
+    ['Flutter', 'Dart', 'Riverpod', 'Provider', 'GetX', 'Offline-first'],
   ),
-  ('Backend', 'Backend', ['Node.js', 'Express.js', 'Java']),
+  ('Java', 'Java', ['Java 8', 'JSP', 'APIs']),
+  ('Arquitetura', 'Architecture', ['Clean Architecture', 'MVVM', 'MVC']),
   (
     'Bancos de dados',
     'Databases',
-    ['PostgreSQL', 'MySQL', 'Firebase', 'Supabase'],
+    ['PostgreSQL', 'MySQL', 'SQLite (Drift)', 'Firebase', 'SQL'],
   ),
   (
     'Testes',
     'Testing',
-    [
-      'Jest',
-      'Vitest',
-      'React Testing Library',
-      'xUnit',
-      'flutter_test',
-      'mocktail',
-    ],
+    ['flutter_test', 'mocktail', 'xUnit', 'Jest', 'Vitest'],
   ),
-  ('Arquitetura', 'Architecture', ['Clean Architecture', 'MVVM', 'FSD', 'MVC']),
+  (
+    'Web e backend',
+    'Web and backend',
+    ['TypeScript', 'React', 'Vue.js', 'Node.js', 'Express.js'],
+  ),
   ('Ferramentas', 'Tools', ['Git', 'GitHub', 'CI/CD', 'Figma']),
 ];
 
@@ -82,8 +70,8 @@ class AboutSection extends StatelessWidget {
                 Reveal(
                   child: Text(
                     context.tr(
-                      'Minha trajetória combina Desenvolvimento Mobile, Web e UX Design, permitindo construir soluções com foco em usabilidade, performance e escalabilidade.',
-                      'My path combines Mobile Development, Web and UX Design, which lets me build solutions focused on usability, performance and scalability.',
+                      'Sou desenvolvedora de software e trabalho principalmente com Flutter e Java. No trabalho, atuo com sistemas legados em Java 8, JSP e com apps mobile em Flutter, online e offline-first. Tenho projetos com modelos de linguagem e SLMs, como o TeoFinance, em que o Qwen3 1.7B roda no próprio celular.',
+                      'I am a software developer and I work mainly with Flutter and Java. At work, I handle legacy systems in Java 8, JSP and mobile apps in Flutter, both online and offline-first. I have projects with language models and SLMs, such as TeoFinance, where Qwen3 1.7B runs on the phone itself.',
                     ),
                     style: paragraph,
                   ),
@@ -92,8 +80,8 @@ class AboutSection extends StatelessWidget {
                 Reveal(
                   child: Text(
                     context.tr(
-                      'Atualmente, atuo no desenvolvimento de sistemas e produtos digitais utilizando Flutter, React e Java/JSP. Também desenvolvo pesquisa acadêmica em Ciência da Computação e atuo como Presidente do Licode (Ladies in Code), liderando iniciativas de comunidade, eventos e mentoria.',
-                      'Currently, I develop systems and digital products with Flutter, React and Java/JSP. I also do academic research in Computer Science and serve as President of Licode (Ladies in Code), leading community initiatives, events and mentoring.',
+                      'Na pesquisa acadêmica, trabalhei com inteligência artificial, visão computacional, OCR, dispositivos móveis, IHC, UX e programação em blocos. Sou autora de quatro artigos científicos, com trabalhos apresentados em congressos nacionais e internacionais. Curso Ciência da Computação na UNIT e sou presidente do Licode (Ladies in Code).',
+                      'In the field of academic research, I have carried out work involving Artificial Intelligence, computer vision, OCR, mobile devices, HCI, UX and block-based programming. I have authored four scientific articles, with work presented at national and international conferences. I study Computer Science at UNIT and I am the President of Licode (Ladies in Code).',
                     ),
                     style: paragraph,
                   ),

@@ -9,8 +9,8 @@ import 'data/teofinance_project.dart';
 import 'data/teofinance_project_en.dart';
 import 'project.dart';
 
-const _filtersPt = ['Todos', 'Mobile', 'Web', 'UX/UI', 'Artigos'];
-const _filtersEn = ['All', 'Mobile', 'Web', 'UX/UI', 'Articles'];
+const _filtersPt = ['Todos', 'Mobile', 'Web', 'Artigos'];
+const _filtersEn = ['All', 'Mobile', 'Web', 'Articles'];
 
 /// O primeiro filtro mostra tudo; os demais batem com `Project.category`.
 List<String> projectFiltersFor(AppLang lang) =>
